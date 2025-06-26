@@ -24,6 +24,12 @@
     gap: 40px;
     flex-wrap: wrap;
     font-family: Arial, sans-serif;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
   }
 
   #top-bar i {
@@ -36,8 +42,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 40px;
+    padding: 5px 40px;
     border-bottom: 1px solid #ddd;
+
+    position: fixed;
+    top: 34px; /* 跟 #top-bar 高度保持一致 */
+    left: 0;
+    width: 100%;
+    z-index: 999;
   }
 
   /* LOGO */
@@ -74,43 +86,13 @@
   .right-section {
     font-size: 14px;
   }
+
+  /* 为了防止固定顶部遮挡页面内容，增加顶部留白 */
+  body {
+    padding-top: 110px; /* 34px + 76px 导航高度预估 */
+  }
 </style>
 
-<!-- 顶部蓝色条 -->
-<div id="top-bar">
-  <span><i class="fas fa-envelope"></i> contact@creator-tech.cn</span>
-  <span><i class="fas fa-phone"></i> +86 13940403431</span>
-  <span><i class="fas fa-map-marker-alt"></i> Room 44603, 44/F, Pearl Plaza, Shenyang, China</span>
-</div>
-
-<!-- 主导航部分 -->
-<div id="main-nav-wrapper">
-  <!-- LOGO（点击跳转主页） -->
-  <div class="logo">
-    <a href="index.html"><img src="images/logo.png" alt="Creator Logo" /></a>
-  </div>
-
-  <!-- 导航菜单 -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#factories">Factories</a></li>
-      <li><a href="#processes">Processes</a></li>
-      <li><a href="#products">Products</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#contact">Contact Us</a></li>
-    </ul>
-  </nav>
-
-  <!-- 右侧语言选择或空白预留 -->
-  <div class="right-section">
-    <select>
-      <option selected>English</option>
-      <option>中文</option>
-    </select>
-  </div>
-</div>
-  </style>
 </head>
 
 			<!-- Banner -->
