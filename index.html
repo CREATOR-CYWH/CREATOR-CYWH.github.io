@@ -11,61 +11,61 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <!-- 你自己的样式放后面 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+	<!-- Font Awesome 图标支持 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
 <style>
-  /* 顶部深蓝信息条 */
+  /* 固定顶部蓝条和导航栏 */
+  #top-bar,
+  #main-nav-wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+
+  /* 蓝色信息条 */
   #top-bar {
     background-color: #001f5b;
     color: white;
-    font-size: 14px;
+    font-size: 13px;
     padding: 6px 0;
     display: flex;
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
     font-family: Arial, sans-serif;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
   }
 
   #top-bar i {
     margin-right: 6px;
   }
 
-  /* 主导航栏整体 */
+  /* 导航栏 */
   #main-nav-wrapper {
     background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 40px;
+    padding: 4px 40px;
     border-bottom: 1px solid #ddd;
-
-    position: fixed;
-    top: 34px; /* 跟 #top-bar 高度保持一致 */
-    left: 0;
-    width: 100%;
-    z-index: 999;
+    top: 30px; /* 避开上方信息条 */
   }
 
-  /* LOGO */
   #main-nav-wrapper .logo {
     display: flex;
     align-items: center;
   }
 
   #main-nav-wrapper .logo img {
-    height: 45px;
+    height: 42px;
   }
 
-  /* 导航菜单 */
   #main-nav-wrapper nav ul {
     display: flex;
-    gap: 35px;
+    gap: 30px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -75,25 +75,57 @@
     text-decoration: none;
     color: #001f5b;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 14px;
   }
 
   #main-nav-wrapper nav a:hover {
     color: #e63900;
   }
 
-  /* 语言选择或其它右侧模块 */
   .right-section {
-    font-size: 14px;
+    font-size: 13px;
   }
 
-  /* 为了防止固定顶部遮挡页面内容，增加顶部留白 */
+  /* 页面内容避免被导航遮住 */
   body {
-    padding-top: 110px; /* 34px + 76px 导航高度预估 */
+    padding-top: 100px; /* 顶部两个栏高度相加再多留一点空 */
   }
 </style>
 
-</head>
+<!-- 顶部信息条 -->
+<div id="top-bar">
+  <span><i class="fas fa-envelope"></i> contact@creator-tech.cn</span>
+  <span><i class="fas fa-phone"></i> +86 13940403431</span>
+  <span><i class="fas fa-map-marker-alt"></i> Room 44603, 44/F, Pearl Plaza, Shenyang, China</span>
+</div>
+
+<!-- 导航栏 -->
+<div id="main-nav-wrapper">
+  <div class="logo">
+    <a href="index.html"><img src="images/logo.png" alt="Creator Logo" /></a>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#factories">Factories</a></li>
+      <li><a href="#processes">Processes</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </nav>
+  <div class="right-section">
+    <select>
+      <option selected>English</option>
+      <option>中文</option>
+    </select>
+  </div>
+</div>
+
+</body>
+
+
+
 
 			<!-- Banner -->
 			<div id="banner-wrapper" style="margin-top: 30px;">
