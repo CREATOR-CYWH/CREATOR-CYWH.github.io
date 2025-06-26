@@ -4,65 +4,108 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
-	<head>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-		<title>Verti by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload homepage">
-		<div id="top-bar">
+<!-- Font Awesome 图标支持 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<style>
+  /* 顶部深蓝信息条 */
+  #top-bar {
+    background-color: #001f5b;
+    color: white;
+    font-size: 14px;
+    padding: 6px 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    font-family: Arial, sans-serif;
+  }
+
+  #top-bar i {
+    margin-right: 6px;
+  }
+
+  /* 主导航栏整体 */
+  #main-nav-wrapper {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* LOGO */
+  #main-nav-wrapper .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  #main-nav-wrapper .logo img {
+    height: 45px;
+  }
+
+  /* 导航菜单 */
+  #main-nav-wrapper nav ul {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #main-nav-wrapper nav a {
+    text-decoration: none;
+    color: #001f5b;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  #main-nav-wrapper nav a:hover {
+    color: #e63900;
+  }
+
+  /* 语言选择或其它右侧模块 */
+  .right-section {
+    font-size: 14px;
+  }
+</style>
+
+<!-- 顶部蓝色条 -->
+<div id="top-bar">
   <span><i class="fas fa-envelope"></i> contact@creator-tech.cn</span>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
   <span><i class="fas fa-phone"></i> +86 13940403431</span>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <span>Room 44603, 44/F, Pearl Plaza, 18 Pangjiang St., Dadong District, Shenyang, China</span>
+  <span><i class="fas fa-map-marker-alt"></i> Room 44603, 44/F, Pearl Plaza, Shenyang, China</span>
 </div>
 
-		<div id="page-wrapper">
-
-			<!-- Top info bar -->
-<div style="background-color:#002766; color: white; font-size: 14px; padding: 6px 30px; display: flex; justify-content: space-between; align-items: center;">
-  <div>
-    <i class="fas fa-envelope"></i> contact@creator-tech.cn &nbsp; | &nbsp;
-    <i class="fas fa-phone"></i> +86 13940403431
-  </div>
-  <div>
-    Room 44603, 44/F, Pearl Plaza, 18 Pangjiang St., Dadong District, Shenyang, China
-  </div>
-</div>
-
-<!-- Main navigation bar -->
-<div style="display: flex; align-items: center; padding: 15px 30px; background-color: white; border-bottom: 1px solid #ddd;">
-  <!-- LOGO -->
-  <div style="flex-shrink: 0;">
-    <img src="images/logo.png" alt="Logo" style="height: 50px;">
+<!-- 主导航部分 -->
+<div id="main-nav-wrapper">
+  <!-- LOGO（点击跳转主页） -->
+  <div class="logo">
+    <a href="index.html"><img src="images/logo.png" alt="Creator Logo" /></a>
   </div>
 
-  <!-- Navigation -->
-  <nav style="margin-left: auto;">
-    <ul style="display: flex; gap: 30px; list-style: none; margin: 0; padding: 0;">
-      <li><a href="index.html" style="color: #e63900; font-weight: bold;">Home</a></li>
-      <li><a href="#factories" style="color: #333;">Factories</a></li>
-      <li><a href="#processes" style="color: #333;">Processes</a></li>
-      <li><a href="#products" style="color: #333;">Products</a></li>
-      <li><a href="#news" style="color: #333;">News</a></li>
-      <li><a href="#contact" style="color: #333;">Contact Us</a></li>
+  <!-- 导航菜单 -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#factories">Factories</a></li>
+      <li><a href="#processes">Processes</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact Us</a></li>
     </ul>
   </nav>
 
-  <!-- Language Switcher (optional) -->
-  <!--
-  <div style="margin-left: 20px;">
+  <!-- 右侧语言选择或空白预留 -->
+  <div class="right-section">
     <select>
-      <option>🇬🇧 English</option>
-      <option>🇨🇳 中文</option>
+      <option selected>English</option>
+      <option>中文</option>
     </select>
   </div>
-  -->
 </div>
+
 
 			<!-- Banner -->
 			<div id="banner-wrapper" style="margin-top: 30px;">
