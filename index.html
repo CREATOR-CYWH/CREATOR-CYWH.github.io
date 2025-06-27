@@ -13,117 +13,108 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-	<!-- Font Awesome 图标支持 -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-
+<!-- 1. FontAwesome 图标 -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
 
 <style>
+  /* 防止内容被遮挡 */
   body {
-    margin: 0;
-    padding-top: 120px; /* 留出顶部高度空间，避免被遮住 */
+    padding-top: 120px; /* 你可以按实际高度微调 */
   }
 
-  /* 顶部信息条固定 */
+  /* 顶部信息条 */
   #top-bar {
-    background-color: #001f5b;
-    color: white;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #001f5b;
+    color: #fff;
     font-size: 14px;
     padding: 6px 0;
     display: flex;
     justify-content: center;
     gap: 40px;
-    flex-wrap: wrap;
-    font-family: Arial, sans-serif;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     z-index: 1000;
   }
+  #top-bar i { margin-right:6px; }
 
-  #top-bar i {
-    margin-right: 6px;
+  /* 原生模板 Header 固定 */
+  #header-wrapper {
+    position: fixed;
+    top: 36px; /* 等于 #top-bar 的高度 */
+    left: 0; right: 0;
+    background: #fff;
+    z-index: 999;
+    border-bottom: 1px solid #ddd;
+  }
+  /* 让内部元素水平拉伸并垂直居中 */
+  #header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 40px;
   }
 
-/* 主导航栏整体 */
-#main-nav-wrapper {
-  background-color: white;
-  display: flex;
-  align-items: center; /* 垂直居中关键 */
-  justify-content: space-between;
-  padding: 0 40px;
-  height: 70px; /* 设置固定高度以便居中 */
-  box-sizing: border-box;
-  border-bottom: 1px solid #ddd;
-  position: sticky;
-  top: 30px; /* 顶部信息条高度 */
-  z-index: 999;
-}
+  /* Logo */
+  #logo {
+    display: flex;
+    align-items: center;
+  }
+  #logo img {
+    height: 42px;
+    display: block;
+  }
 
-/* LOGO 包裹区域 */
-#main-nav-wrapper .logo {
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
+  /* Nav 菜单 */
+  #nav ul {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  #nav a {
+    color: #001f5b;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1;
+    padding: 8px 0; /* 扩大点击区域 */
+    text-decoration: none;
+  }
+  #nav a:hover {
+    color: #e63900;
+  }
 
-/* LOGO 图片 */
-#main-nav-wrapper .logo img {
-  height: 42px;
-  object-fit: contain;
-}
-
-/* 导航菜单 */
-#main-nav-wrapper nav ul {
-  display: flex;
-  gap: 35px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-}
-
-#main-nav-wrapper nav a {
-  text-decoration: none;
-  color: #001f5b;
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 70px; /* 保证点击区域与导航栏等高 */
-}
-
-#main-nav-wrapper nav a:hover {
-  color: #e63900;
-}
-
-/* 右侧语言选择 */
-.right-section {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
+  /* 右侧语言选择 */
+  .right-section select {
+    font-size: 14px;
+    padding: 4px;
+  }
 </style>
 
-<!-- 顶部信息条 -->
+<!-- 2. 粘到 <body> 里最上方： -->
 <div id="top-bar">
-  <span><i class="fas fa-envelope"></i> Creator.cywh@gmail.com</span>
-  <span><i class="fas fa-phone"></i> +86-13940403431</span>
-  <span><i class="fas fa-map-marker-alt"></i> Room 44603, 44/F, Pearl Plaza, Shenyang, China</span>
+  <span><i class="fas fa-envelope"></i>contact@creator-tech.cn</span>
+  <span><i class="fas fa-phone"></i>+86 13940403431</span>
+  <span><i class="fas fa-map-marker-alt"></i>Room 44603, 44/F, Pearl Plaza, Shenyang, China</span>
 </div>
 
-<!-- 主导航 -->
-<div id="main-nav-wrapper">
-  <div id="main-nav">
-    <!-- LOGO -->
-    <div class="logo">
-      <a href="index.html"><img src="images/logo.png" alt="Creator Logo" /></a>
+<!-- 然后保留原模板的 header-wrapper -->
+<div id="header-wrapper">
+  <header id="header" class="container">
+    <!-- Logo -->
+    <div id="logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Logo" />
+      </a>
+      <span>CREATOR TECHNOLOGY CO., LTD</span>
     </div>
-
-    <!-- 菜单 -->
-    <nav>
+    <!-- Nav -->
+    <nav id="nav">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li class="current"><a href="index.html">Home</a></li>
         <li><a href="#factories">Factories</a></li>
         <li><a href="#processes">Processes</a></li>
         <li><a href="#products">Products</a></li>
@@ -131,15 +122,14 @@
         <li><a href="#contact">Contact Us</a></li>
       </ul>
     </nav>
-
-    <!-- 语言切换 -->
+    <!-- 右侧语言 -->
     <div class="right-section">
       <select>
         <option selected>English</option>
         <option>中文</option>
       </select>
     </div>
-  </div>
+  </header>
 </div>
 
 
