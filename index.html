@@ -39,63 +39,94 @@
       margin-right: 6px;
     }
 
-    /* 原生模板 Header 固定在信息条下方 */
-    #header-wrapper {
-      position: fixed;
-      top: 38px; /* 与 #top-bar 高度对应 */
-      left: 0; right: 0;
-      background: #fff;
-      border-bottom: 1px solid #ddd;
-      z-index: 999;
-    }
+    /* ─── 全局：给内容区留出固定头部的空间 ─── */
+body {
+  margin: 0;
+  padding-top: 90px; /* 30px 信息条 + 60px 导航 */
+}
 
-    /* 让 Header 内部元素水平拉伸并垂直居中 */
-    #header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 5px 40px;
-    }
+/* ─── 顶部信息条 ─── */
+#top-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: #001f5b;
+  color: #fff;
+  font-size: 14px;
+  padding: 6px 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  z-index: 1000;
+}
+#top-bar i {
+  margin-right: 6px;
+}
 
-    /* Logo 块垂直居中 */
-    #logo {
-      display: flex;
-      align-items: center;
-    }
-    #logo img {
-      height: 42px;
-      display: block;
-    }
+/* ─── 固定导航条 ─── */
+#header-wrapper {
+  position: fixed;
+  top: 30px;   /* 顶部信息条高度 */
+  left: 0; right: 0;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  z-index: 999;
+}
 
-    /* Nav 菜单水平居中 **/
-    #nav ul {
-      display: flex;
-      gap: 35px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    #nav a {
-      color: #001f5b;
-      font-weight: 600;
-      font-size: 15px;
-      line-height: 1;
-      padding: 8px 0; /* 扩大点击区域 */
-      text-decoration: none;
-    }
-    #nav a:hover {
-      color: #e63900;
-    }
+/* ─── 导航内部布局 ─── */
+#header {
+  display: flex;
+  align-items: center;
+  height: 60px;      /* 导航总高度 */
+  padding: 0 40px;   /* 左右内边距 */
+  box-sizing: border-box;
+}
 
-    /* 右侧语言选择块垂直居中 */
-    .right-section {
-      display: flex;
-      align-items: center;
-    }
-    .right-section select {
-      font-size: 14px;
-      padding: 4px;
-    }
+/* LOGO 区域：左对齐 */
+#logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+#logo img {
+  height: 42px;
+  display: block;
+}
+
+/* 菜单区：水平居中 */
+#nav {
+  flex: 1 1 auto;
+}
+#nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#nav a {
+  color: #001f5b;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  line-height: 1;
+  padding: 8px 0;
+}
+#nav a:hover {
+  color: #e63900;
+}
+
+/* 右侧语言切换：右对齐 */
+.right-section {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+.right-section select {
+  font-size: 14px;
+  padding: 4px;
+}
+
   </style>
 </head>
 <body>
