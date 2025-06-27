@@ -46,68 +46,63 @@
     margin-right: 6px;
   }
 
-  /* 主导航栏固定 */
-  #main-nav-wrapper {
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 30px;
-    border-bottom: 1px solid #ddd;
-    position: fixed;
-    top: 38px; /* 距离顶部信息条下方 */
-    left: 0;
-    right: 0;
-    z-index: 999;
-  }
+/* 主导航栏整体 */
+#main-nav-wrapper {
+  background-color: white;
+  display: flex;
+  align-items: center; /* 垂直居中关键 */
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 70px; /* 设置固定高度以便居中 */
+  box-sizing: border-box;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 30px; /* 顶部信息条高度 */
+  z-index: 999;
+}
 
-  /* 导航内部分三块：logo、菜单、右侧 */
-  #main-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1280px;
-  }
-
-  /* LOGO */
-.logo {
+/* LOGO 包裹区域 */
+#main-nav-wrapper .logo {
   display: flex;
   align-items: center;
-  height: 60px;
+  height: 100%;
 }
 
-.logo img {
-  height: 40px;
-  margin-top: 4px; /* 微调下移，必要时可以调为6px/8px */
+/* LOGO 图片 */
+#main-nav-wrapper .logo img {
+  height: 42px;
+  object-fit: contain;
 }
 
+/* 导航菜单 */
+#main-nav-wrapper nav ul {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
 
-  /* 菜单 */
-  nav ul {
-    display: flex;
-    gap: 35px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+#main-nav-wrapper nav a {
+  text-decoration: none;
+  color: #001f5b;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 70px; /* 保证点击区域与导航栏等高 */
+}
 
-  nav a {
-    text-decoration: none;
-    color: #001f5b;
-    font-weight: 600;
-    font-size: 15px;
-  }
+#main-nav-wrapper nav a:hover {
+  color: #e63900;
+}
 
-  nav a:hover {
-    color: #e63900;
-  }
+/* 右侧语言选择 */
+.right-section {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
 
-  /* 语言切换 */
-  .right-section select {
-    font-size: 14px;
-    padding: 4px;
-  }
 </style>
 
 <!-- 顶部信息条 -->
