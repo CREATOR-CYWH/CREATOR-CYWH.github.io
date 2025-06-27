@@ -16,79 +16,89 @@
 	<!-- Font Awesome 图标支持 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
+
+
 <style>
-  /* 固定顶部蓝条和导航栏 */
-  #top-bar,
-  #main-nav-wrapper {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 9999;
+  body {
+    margin: 0;
+    padding-top: 120px; /* 留出顶部高度空间，避免被遮住 */
   }
 
-  /* 蓝色信息条 */
+  /* 顶部信息条固定 */
   #top-bar {
     background-color: #001f5b;
     color: white;
-    font-size: 13px;
+    font-size: 14px;
     padding: 6px 0;
     display: flex;
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
     font-family: Arial, sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
   }
 
   #top-bar i {
     margin-right: 6px;
   }
 
-  /* 导航栏 */
+  /* 主导航栏固定 */
   #main-nav-wrapper {
     background-color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 4px 40px;
+    padding: 8px 30px;
     border-bottom: 1px solid #ddd;
-    top: 30px; /* 避开上方信息条 */
+    position: fixed;
+    top: 38px; /* 距离顶部信息条下方 */
+    left: 0;
+    right: 0;
+    z-index: 999;
   }
 
-  #main-nav-wrapper .logo {
+  /* 导航内部分三块：logo、菜单、右侧 */
+  #main-nav {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1280px;
   }
 
-  #main-nav-wrapper .logo img {
-    height: 42px;
+  /* LOGO */
+  .logo img {
+    height: 40px;
   }
 
-  #main-nav-wrapper nav ul {
+  /* 菜单 */
+  nav ul {
     display: flex;
-    gap: 30px;
+    gap: 35px;
     list-style: none;
     margin: 0;
     padding: 0;
   }
 
-  #main-nav-wrapper nav a {
+  nav a {
     text-decoration: none;
     color: #001f5b;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 15px;
   }
 
-  #main-nav-wrapper nav a:hover {
+  nav a:hover {
     color: #e63900;
   }
 
-  .right-section {
-    font-size: 13px;
-  }
-
-  /* 页面内容避免被导航遮住 */
-  body {
-    padding-top: 100px; /* 顶部两个栏高度相加再多留一点空 */
+  /* 语言切换 */
+  .right-section select {
+    font-size: 14px;
+    padding: 4px;
   }
 </style>
 
@@ -99,30 +109,36 @@
   <span><i class="fas fa-map-marker-alt"></i> Room 44603, 44/F, Pearl Plaza, Shenyang, China</span>
 </div>
 
-<!-- 导航栏 -->
+<!-- 主导航 -->
 <div id="main-nav-wrapper">
-  <div class="logo">
-    <a href="index.html"><img src="images/logo.png" alt="Creator Logo" /></a>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#factories">Factories</a></li>
-      <li><a href="#processes">Processes</a></li>
-      <li><a href="#products">Products</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#contact">Contact Us</a></li>
-    </ul>
-  </nav>
-  <div class="right-section">
-    <select>
-      <option selected>English</option>
-      <option>中文</option>
-    </select>
+  <div id="main-nav">
+    <!-- LOGO -->
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="Creator Logo" /></a>
+    </div>
+
+    <!-- 菜单 -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#factories">Factories</a></li>
+        <li><a href="#processes">Processes</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- 语言切换 -->
+    <div class="right-section">
+      <select>
+        <option selected>English</option>
+        <option>中文</option>
+      </select>
+    </div>
   </div>
 </div>
 
-</body>
 
 
 
