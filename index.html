@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <title>CREATOR TECHNOLOGY CO., LTD.</title>
 
   <!-- 1. 模板主样式 -->
@@ -14,12 +14,13 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
 
-  <!-- 3. 自定义固定头部 & 居中样式 -->
+  <!-- 3. 自定义固定头部 & 垂直居中样式 -->
   <style>
     /* 防止内容被固定头部遮挡 */
     body {
       margin: 0;
-      padding-top: 120px; /* 根据实际头部高度微调 */
+      padding-top: 90px; /* 30px 信息条 + 60px 导航 */
+      font-family: 'Open Sans', sans-serif;
     }
 
     /* 顶部信息条 */
@@ -39,105 +40,82 @@
       margin-right: 6px;
     }
 
-    /* ─── 全局：给内容区留出固定头部的空间 ─── */
-body {
-  margin: 0;
-  padding-top: 90px; /* 30px 信息条 + 60px 导航 */
-}
+    /* 固定导航栏 */
+    #header-wrapper {
+      position: fixed;
+      top: 30px;   /* 信息条高度 */
+      left: 0; right: 0;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      z-index: 999;
+    }
 
-/* ─── 顶部信息条 ─── */
-#top-bar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  background: #001f5b;
-  color: #fff;
-  font-size: 14px;
-  padding: 6px 0;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  z-index: 1000;
-}
-#top-bar i {
-  margin-right: 6px;
-}
+    /* 导航内部布局 */
+    #header {
+      display: flex;
+      align-items: center;            /* 垂直居中 */
+      justify-content: center;        /* logo+nav 居中 */
+      height: 60px;                   /* 导航栏高度 */
+      padding: 0 40px;                /* 左右留白 */
+      position: relative;
+      box-sizing: border-box;
+    }
 
-/* ─── 固定导航条 ─── */
-#header-wrapper {
-  position: fixed;
-  top: 30px;   /* 顶部信息条高度 */
-  left: 0; right: 0;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-  z-index: 999;
-}
+    /* Logo 区域 */
+    #logo {
+      display: flex;
+      align-items: center;
+      margin-right: 50px;             /* 调整与 Home 的间距 */
+    }
+    #logo img {
+      height: 42px;
+      display: block;
+    }
 
-/* ─── 导航内部布局 ─── */
-#header {
-  display: flex;
-  align-items: center;
-  height: 60px;      /* 导航总高度 */
-  padding: 0 40px;   /* 左右内边距 */
-  box-sizing: border-box;
-}
+    /* 菜单区域 */
+    #nav ul {
+      display: flex;
+      gap: 35px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    #nav a {
+      color: #001f5b;
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      padding: 8px 0;                 /* 扩大点击区域 */
+    }
+    #nav a:hover {
+      color: #e63900;
+    }
 
-/* LOGO 区域：左对齐 */
-#logo {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-}
-#logo img {
-  height: 42px;
-  display: block;
-}
-
-/* 菜单区：水平居中 */
-#nav {
-  flex: 1 1 auto;
-}
-#nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 35px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-#nav a {
-  color: #001f5b;
-  font-weight: 600;
-  font-size: 15px;
-  text-decoration: none;
-  line-height: 1;
-  padding: 8px 0;
-}
-#nav a:hover {
-  color: #e63900;
-}
-
-/* 右侧语言切换：右对齐 */
-.right-section {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-}
-.right-section select {
-  font-size: 14px;
-  padding: 4px;
-}
-
+    /* 右侧语言切换 */
+    .right-section {
+      position: absolute;
+      right: 40px;                    /* 距离右侧留白 */
+      top: 50%;
+      transform: translateY(-50%);    /* 垂直居中 */
+      display: flex;
+      align-items: center;
+    }
+    .right-section select {
+      font-size: 14px;
+      padding: 4px;
+    }
   </style>
 </head>
-<body>
+<body class="is-preload homepage">
+
   <!-- 顶部信息条 -->
   <div id="top-bar">
-    <span><i class="fas fa-envelope"></i>contact@creator-tech.cn</span>
-    <span><i class="fas fa-phone"></i>+86 13940403431</span>
-    <span><i class="fas fa-map-marker-alt"></i>Room 44603, 44/F, Pearl Plaza, Shenyang, China</span>
+    <span><i class="fas fa-envelope"></i> contact@creator-tech.cn</span>
+    <span><i class="fas fa-phone"></i> +86 13940403431</span>
+    <span><i class="fas fa-map-marker-alt"></i> Room 44603, 44/F, Pearl Plaza, Shenyang, China</span>
   </div>
 
-  <!-- 原模板 Header（包含 Logo、Nav、语言切换） -->
+  <!-- 固定导航 -->
   <div id="header-wrapper">
     <header id="header" class="container">
       <!-- Logo -->
@@ -145,9 +123,8 @@ body {
         <a href="index.html">
           <img src="images/logo.png" alt="Logo" />
         </a>
-        <span>CREATOR TECHNOLOGY CO., LTD</span>
       </div>
-      <!-- Nav -->
+      <!-- 菜单 -->
       <nav id="nav">
         <ul>
           <li class="current"><a href="index.html">Home</a></li>
@@ -168,8 +145,38 @@ body {
     </header>
   </div>
 
-  <!-- 下面是你的 Banner、Features 等页面主体内容 -->
-  <!-- … -->
+  <!-- ↓↓↓ 下面开始是你原来的 Banner、Features、Main、Footer 内容 ↓↓↓ -->
+
+  <!-- Banner -->
+  <div id="banner-wrapper" style="margin-top: 30px;">
+    <!-- ... -->
+  </div>
+
+  <!-- Features -->
+  <div id="features-wrapper">
+    <!-- ... -->
+  </div>
+
+  <!-- Main -->
+  <div id="main-wrapper">
+    <!-- ... -->
+  </div>
+
+  <!-- Footer -->
+  <div id="footer-wrapper">
+    <!-- ... -->
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.dropotron.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
 
 
 
