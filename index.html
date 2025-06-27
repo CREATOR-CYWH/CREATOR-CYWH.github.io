@@ -1,136 +1,144 @@
-<!DOCTYPE HTML>
-<!--
-	Verti by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<!-- Font Awesome 图标支持 -->
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <!-- 必须先加载模板主样式 -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CREATOR TECHNOLOGY CO., LTD.</title>
+
+  <!-- 1. 模板主样式 -->
   <link rel="stylesheet" href="assets/css/main.css" />
-  <!-- 你自己的样式放后面 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- 2. Font Awesome 图标库 -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <!-- 3. 自定义固定头部 & 居中样式 -->
+  <style>
+    /* 防止内容被固定头部遮挡 */
+    body {
+      margin: 0;
+      padding-top: 120px; /* 根据实际头部高度微调 */
+    }
+
+    /* 顶部信息条 */
+    #top-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #001f5b;
+      color: #fff;
+      font-size: 14px;
+      padding: 6px 0;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      z-index: 1000;
+    }
+    #top-bar i {
+      margin-right: 6px;
+    }
+
+    /* 原生模板 Header 固定在信息条下方 */
+    #header-wrapper {
+      position: fixed;
+      top: 38px; /* 与 #top-bar 高度对应 */
+      left: 0; right: 0;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      z-index: 999;
+    }
+
+    /* 让 Header 内部元素水平拉伸并垂直居中 */
+    #header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 40px;
+    }
+
+    /* Logo 块垂直居中 */
+    #logo {
+      display: flex;
+      align-items: center;
+    }
+    #logo img {
+      height: 42px;
+      display: block;
+    }
+
+    /* Nav 菜单水平居中 **/
+    #nav ul {
+      display: flex;
+      gap: 35px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    #nav a {
+      color: #001f5b;
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 1;
+      padding: 8px 0; /* 扩大点击区域 */
+      text-decoration: none;
+    }
+    #nav a:hover {
+      color: #e63900;
+    }
+
+    /* 右侧语言选择块垂直居中 */
+    .right-section {
+      display: flex;
+      align-items: center;
+    }
+    .right-section select {
+      font-size: 14px;
+      padding: 4px;
+    }
+  </style>
 </head>
 <body>
-<!-- 1. FontAwesome 图标 -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
+  <!-- 顶部信息条 -->
+  <div id="top-bar">
+    <span><i class="fas fa-envelope"></i>contact@creator-tech.cn</span>
+    <span><i class="fas fa-phone"></i>+86 13940403431</span>
+    <span><i class="fas fa-map-marker-alt"></i>Room 44603, 44/F, Pearl Plaza, Shenyang, China</span>
+  </div>
 
-<style>
-  /* 防止内容被遮挡 */
-  body {
-    padding-top: 120px; /* 你可以按实际高度微调 */
-  }
+  <!-- 原模板 Header（包含 Logo、Nav、语言切换） -->
+  <div id="header-wrapper">
+    <header id="header" class="container">
+      <!-- Logo -->
+      <div id="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Logo" />
+        </a>
+        <span>CREATOR TECHNOLOGY CO., LTD</span>
+      </div>
+      <!-- Nav -->
+      <nav id="nav">
+        <ul>
+          <li class="current"><a href="index.html">Home</a></li>
+          <li><a href="#factories">Factories</a></li>
+          <li><a href="#processes">Processes</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+      <!-- 右侧语言切换 -->
+      <div class="right-section">
+        <select>
+          <option selected>English</option>
+          <option>中文</option>
+        </select>
+      </div>
+    </header>
+  </div>
 
-  /* 顶部信息条 */
-  #top-bar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: #001f5b;
-    color: #fff;
-    font-size: 14px;
-    padding: 6px 0;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    z-index: 1000;
-  }
-  #top-bar i { margin-right:6px; }
-
-  /* 原生模板 Header 固定 */
-  #header-wrapper {
-    position: fixed;
-    top: 36px; /* 等于 #top-bar 的高度 */
-    left: 0; right: 0;
-    background: #fff;
-    z-index: 999;
-    border-bottom: 1px solid #ddd;
-  }
-  /* 让内部元素水平拉伸并垂直居中 */
-  #header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 40px;
-  }
-
-  /* Logo */
-  #logo {
-    display: flex;
-    align-items: center;
-  }
-  #logo img {
-    height: 42px;
-    display: block;
-  }
-
-  /* Nav 菜单 */
-  #nav ul {
-    display: flex;
-    gap: 35px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  #nav a {
-    color: #001f5b;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 1;
-    padding: 8px 0; /* 扩大点击区域 */
-    text-decoration: none;
-  }
-  #nav a:hover {
-    color: #e63900;
-  }
-
-  /* 右侧语言选择 */
-  .right-section select {
-    font-size: 14px;
-    padding: 4px;
-  }
-</style>
-
-<!-- 2. 粘到 <body> 里最上方： -->
-<div id="top-bar">
-  <span><i class="fas fa-envelope"></i>contact@creator-tech.cn</span>
-  <span><i class="fas fa-phone"></i>+86 13940403431</span>
-  <span><i class="fas fa-map-marker-alt"></i>Room 44603, 44/F, Pearl Plaza, Shenyang, China</span>
-</div>
-
-<!-- 然后保留原模板的 header-wrapper -->
-<div id="header-wrapper">
-  <header id="header" class="container">
-    <!-- Logo -->
-    <div id="logo">
-      <a href="index.html">
-        <img src="images/logo.png" alt="Logo" />
-      </a>
-      <span>CREATOR TECHNOLOGY CO., LTD</span>
-    </div>
-    <!-- Nav -->
-    <nav id="nav">
-      <ul>
-        <li class="current"><a href="index.html">Home</a></li>
-        <li><a href="#factories">Factories</a></li>
-        <li><a href="#processes">Processes</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
-    </nav>
-    <!-- 右侧语言 -->
-    <div class="right-section">
-      <select>
-        <option selected>English</option>
-        <option>中文</option>
-      </select>
-    </div>
-  </header>
-</div>
+  <!-- 下面是你的 Banner、Features 等页面主体内容 -->
+  <!-- … -->
 
 
 
