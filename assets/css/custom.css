@@ -1,0 +1,82 @@
+/* ============ custom.css (放在 main.css 之后) ============ */
+
+/* 整体页面顶部留白，避免固定 header 遮挡 */
+body {
+  margin: 0;
+  padding-top: 80px; /* 30px 信息条 + 50px 导航 */
+}
+
+/* 顶部信息条 */
+#top-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 30px;
+  background: #001f5b;
+  color: #fff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  z-index: 1000;
+}
+#top-bar i { margin-right: 6px; }
+
+/* 固定导航外层：撑满屏幕 */
+#header-wrapper {
+  position: fixed;
+  top: 30px; left: 0; right: 0;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  height: 50px;
+  z-index: 999;
+}
+
+/* 导航内容容器：限宽居中 + Flex 布局 */
+#header-wrapper .container {
+  max-width: 1200px;  /* 你想要的宽度 */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Logo */
+#logo {
+  margin-right: 20px;
+}
+#logo img {
+  height: 36px;
+  display: block;
+}
+
+/* 菜单 */
+#nav {
+  flex: 1;           /* 占据剩余空间，让最后一个菜单靠右 */
+}
+#nav ul {
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#nav a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #001f5b;
+  text-decoration: none;
+}
+#nav .current > a,
+#nav a:hover {
+  color: #e63900;
+}
+
+/* ↓ 如果你还想让最后一个菜单靠左边留点空，去掉以下即可 ↓ */
+/* #nav { justify-content: flex-start; } */
