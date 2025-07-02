@@ -2708,28 +2708,3 @@ nav a:hover {
 
 
 
-/* 覆盖以前的 centering 规则 */
-#header #logo,
-#header nav {
-  width: auto !important;
-  text-align: left !important;
-}
-
-#header {
-  display: flex !important;
-  justify-content: flex-start !important;
-  align-items: center !important;
-}
-
-#logo {
-  margin-right: 20px !important;
-}
-
-#nav ul {
-  justify-content: flex-start !important;
-}
-
-/* 确保 body 有足够 padding，内容不被导航遮住 */
-body {
-  padding-top: 80px !important;
-}
