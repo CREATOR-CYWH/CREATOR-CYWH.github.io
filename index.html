@@ -36,9 +36,7 @@
       gap: 40px;
       z-index: 1000;
     }
-    #top-bar i {
-      margin-right: 6px;
-    }
+    #top-bar i { margin-right: 6px; }
 
     /* 固定导航栏 */
     #header-wrapper {
@@ -92,8 +90,9 @@
       height: 100%;
       padding: 0 10px;
     }
-    #nav a:hover,
-    #nav .current > a {
+    /* 当前页高亮 & 悬停 */
+    #nav .current > a,
+    #nav a:hover {
       color: #e63900;
     }
 
@@ -108,9 +107,9 @@
       padding: 4px 8px;
     }
 
-    /* 去掉 banner 的多余 margin */
+    /* Banner 下移，留出间隙 */
     #banner-wrapper {
-      margin-top: 0;
+      margin-top: 20px; /* 根据需要调整 */
     }
   </style>
 </head>
@@ -126,7 +125,7 @@
   <!-- 固定导航 -->
   <div id="header-wrapper">
     <header id="header" class="container">
-      <!-- Logo -->
+      <!-- Logo（在 Home 左侧） -->
       <div id="logo">
         <a href="index.html">
           <img src="images/logo.png" alt="Logo" />
@@ -230,7 +229,7 @@
             </div>
           </section>
         </div>
-        <!-- Crushing -->
+        <!-- Crushing Equipment -->
         <div class="col-4 col-12-medium">
           <section class="box feature">
             <a href="#" class="image featured"><img src="images/crusher.jpg" alt="Crushing Equipment" /></a>
