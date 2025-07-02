@@ -2705,6 +2705,105 @@ nav a:hover {
   font-size: 14px;
   padding: 5px 0;
 }
+/* ================================================================= */
+/* ====================== 固定头部 & 导航覆盖 ===================== */
+/* ================================================================= */
+
+/* 1. 页面顶部预留空间，避免 header 遮挡内容 */
+body {
+  margin: 0 !important;
+  padding-top: 80px !important; /* 30px 信息条 + 50px 导航 */
+}
+
+/* 2. 顶部信息条 */
+#top-bar {
+  position: fixed !important;
+  top: 0; left: 0; right: 0;
+  height: 30px !important;
+  background: #001f5b !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 40px !important;
+  z-index: 1000 !important;
+}
+#top-bar i {
+  margin-right: 6px !important;
+}
+
+/* 3. 固定导航外层，撑满屏幕宽度 */
+#header-wrapper {
+  position: fixed !important;
+  top: 30px !important; /* 紧贴信息条下方 */
+  left: 0 !important;
+  right: 0 !important;
+  height: 50px !important;
+  background: #fff !important;
+  border-bottom: 1px solid #ddd !important;
+  z-index: 999 !important;
+}
+
+/* 4. 导航内容容器：限宽 1200px，居中，水平 flex 布局 */
+#header-wrapper .container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
+}
+
+/* 5. Logo 样式 */
+#logo {
+  margin-right: 20px !important; /* logo 与菜单间距 */
+}
+#logo img {
+  height: 36px !important;
+  display: block !important;
+}
+
+/* 6. 菜单左对齐 + 垂直居中 */
+#nav {
+  flex: 1 !important;
+}
+#nav ul {
+  display: flex !important;
+  gap: 30px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+#nav a {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 8px !important;
+  height: 100% !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #001f5b !important;
+  text-decoration: none !important;
+}
+#nav .current > a,
+#nav a:hover {
+  color: #e63900 !important;
+}
+
+/* 7. 如果有右侧语言选择（现在先删掉或留空） */
+/* 如果要保留，放到 container 最后，并用 margin-left:auto 推到最右 */
+.right-section {
+  margin-left: auto !important;
+  display: flex !important;
+  align-items: center !important;
+}
+.right-section select {
+  font-size: 13px !important;
+  padding: 2px 6px !important;
+}
+
+/* ================================================================= */
 
 
 
