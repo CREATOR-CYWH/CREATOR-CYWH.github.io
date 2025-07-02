@@ -50,28 +50,27 @@
   z-index: 999;
 }
 
-/* 让内部内容在较低高度下垂直居中 */
+/* 1. 修复 Logo 与 Home 的相对位置 */
+/* 让 logo+菜单从左侧开始排列，logo 刚好在 Home 左侧 */
 #header {
   display: flex;
-  align-items: center;       /* 垂直居中 */
-  justify-content: center;   /* logo+nav 居中 */
-  height: 50px;              /* 缩减总高度 */
-  padding: 0 30px;           /* 左右留白稍小 */
+  align-items: center;      /* 垂直居中 */
+  justify-content: flex-start;  /* 从左向右排列，不再整体居中 */
+  height: 50px;
+  padding: 0 30px;
   position: relative;
   box-sizing: border-box;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
-/* Logo 调整 */
+/* logo 与菜单间距 */
 #logo {
-  margin-right: 40px;        /* logo 与菜单间距 */
+  margin-right: 20px;       /* 调小间距让 Logo 距离 Home 更近 */
 }
 #logo img {
-  height: 36px;              /* logo 略微缩小 */
+  height: 36px;
 }
 
-/* 菜单 */
+/* 菜单项 */
 #nav ul {
   display: flex;
   gap: 30px;
@@ -79,17 +78,47 @@
   margin: 0;
   padding: 0;
 }
+
+/* 把右侧语言切换改成用 margin-left: auto */
+.right-section {
+  margin-left: auto;        /* 推到最右侧 */
+  display: flex;
+  align-items: center;
+}
+.right-section select {
+  font-size: 13px;
+  padding: 2px 6px;
+}
+
+/* 2. 修复导航覆盖内容 */
+/* 保证 body 顶部有足够的填充，避免 header 覆盖 */
+body {
+  margin: 0;
+  /* top-bar 大约 30px + header 50px = 80px */
+  padding-top: 80px;
+}
+
+/* 移除旧的绝对定位 */
+#header-wrapper {
+  position: fixed;
+  top: 30px; left: 0; right: 0;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  z-index: 999;
+}
+/* 去掉 #nav a 的 line-height hack，让它跟随 flex 高度 */
 #nav a {
   color: #001f5b;
   font-weight: 600;
   font-size: 14px;
   text-decoration: none;
-  padding: 0;                /* 去掉上下 padding */
-  line-height: 50px;         /* 手动撑满整个导航高度 */
+  padding: 0;    /* 仅保留左右 padding */
+  /* 不要再用 line-height:50px */
 }
 #nav a:hover {
   color: #e63900;
 }
+
 
 /* 右侧语言切换 */
 .right-section {
