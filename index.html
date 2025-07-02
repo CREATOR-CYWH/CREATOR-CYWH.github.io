@@ -5,75 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <title>CREATOR TECHNOLOGY CO., LTD.</title>
 
-  <!-- 原版样式 -->
+  <!-- 1. HTML5 UP 原始样式 -->
   <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="stylesheet" href="assets/css/custom.css" />
 
-
-  <!-- Font Awesome 图标库 -->
+  <!-- 2. Font Awesome（图标库） -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
 
-  <!-- 覆盖与固定导航的自定义样式 -->
+  <!-- 3. 覆盖 & 固定导航的自定义样式 -->
   <style>
-    /* 整体页面顶部留白，避免导航遮挡 */
+    /*————— 页面顶部预留空间 —————*/
     body {
-      margin: 0;
-      padding-top: 80px; /* 信息条30 + 导航50 */
+      margin: 0 !important;
+      padding-top: 80px !important; /* 30px 信息条 + 50px 导航 */
       font-family: 'Open Sans', sans-serif;
-      background-color: #f7f7f7;
+      background-color: #f7f7f7 !important;
     }
 
-    /* 顶部信息条 */
+    /*————— 顶部信息条 —————*/
     #top-bar {
-      position: fixed;
+      position: fixed !important;
       top: 0; left: 0; right: 0;
-      background: #001f5b;
-      color: #fff;
-      font-size: 14px;
-      padding: 6px 0;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      z-index: 1000;
-    }
-    #top-bar i { margin-right: 6px; }
-
-    /* 固定导航栏容器 */
-    #header-wrapper {
-      position: fixed;
-      top: 30px; /* 刚好在信息条下方 */
-      left: 0; right: 0;
-      background: #fff;
-      border-bottom: 1px solid #ddd;
-      height: 50px !important;
-      z-index: 999;
-    }
-
-    /* 导航内部布局：logo + menu 左对齐 */
-    #header {
+      height: 30px !important;
+      background: #001f5b !important;
+      color: #fff !important;
+      font-size: 14px !important;
       display: flex !important;
       align-items: center !important;
-      justify-content: flex-start !important;
-      max-width: 1200px;
-      margin: 0 auto;
-      height: 100%;
-      padding: 0 20px !important;
-      box-sizing: border-box;
+      justify-content: center !important;
+      gap: 40px !important;
+      z-index: 1000 !important;
+    }
+    #top-bar i {
+      margin-right: 6px !important;
     }
 
-    /* Logo 调整 */
+    /*————— 固定导航栏外层 —————*/
+    #header-wrapper {
+      position: fixed !important;
+      top: 30px !important; /* 紧贴信息条下方 */
+      left: 0 !important;
+      right: 0 !important;
+      height: 50px !important;
+      background: #fff !important;
+      border-bottom: 1px solid #ddd !important;
+      z-index: 999 !important;
+    }
+
+    /*————— 导航内部布局 —————*/
+    #header-wrapper .container {
+      max-width: 1200px !important;
+      margin: 0 auto !important;
+      height: 100% !important;
+      display: flex !important;
+      align-items: center !important;
+      padding: 0 20px !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Logo */
     #logo {
       margin-right: 20px !important;
     }
     #logo img {
       height: 36px !important;
-      display: block;
+      display: block !important;
     }
 
-    /* 菜单样式 */
+    /* 菜单 */
+    #nav {
+      /* 占据剩余空间 */
+      flex: 1 !important;
+    }
     #nav ul {
       display: flex !important;
       gap: 30px !important;
@@ -85,19 +90,18 @@
       display: flex !important;
       align-items: center !important;
       height: 100% !important;
-      padding: 0 10px !important;
+      padding: 0 8px !important;
       color: #001f5b !important;
       font-weight: 600 !important;
       font-size: 14px !important;
       text-decoration: none !important;
     }
-    /* 当前页 & 悬停效果 */
     #nav .current > a,
     #nav a:hover {
       color: #e63900 !important;
     }
 
-    /* 下移 Banner，避免与导航重叠 */
+    /*————— 下移 Banner，避免遮挡 —————*/
     #banner-wrapper {
       margin-top: 20px !important;
     }
@@ -116,12 +120,12 @@
 
     <!-- 固定导航 -->
     <div id="header-wrapper">
-      <header id="header" class="container">
-        <!-- LOGO -->
+      <header class="container">
+        <!-- Logo -->
         <div id="logo">
           <a href="index.html"><img src="images/logo.png" alt="Creator Logo" /></a>
         </div>
-        <!-- 导航菜单 -->
+        <!-- 菜单 -->
         <nav id="nav">
           <ul>
             <li class="current"><a href="index.html">Home</a></li>
@@ -141,19 +145,30 @@
         <div class="row">
           <div class="col-7 col-12-medium">
             <h2>CREATOR TECHNOLOGY CO., LTD.</h2>
-            <p style="font-size:24px;">Empowering industry with smart solutions in casting, forging, machining and more.</p>
-            <p style="font-size:24px;">We specialize in technical support and one-stop trade services for industrial clients worldwide.</p>
+            <p style="font-size:24px;">
+              Empowering industry with smart solutions in casting, forging, machining and more.
+            </p>
+            <p style="font-size:24px;">
+              We specialize in technical support and one-stop trade services for industrial clients worldwide.
+            </p>
           </div>
           <div class="col-5 col-12-medium">
             <ul>
-              <li><a href="about.html" class="button large icon solid fa-arrow-circle-right">Learn More</a></li>
-              <li><a href="#contact" class="button alt large icon solid fa-envelope">Contact Us</a></li>
+              <li>
+                <a href="about.html" class="button large icon solid fa-arrow-circle-right">
+                  Learn More
+                </a>
+              </li>
+              <li>
+                <a href="#contact" class="button alt large icon solid fa-envelope">
+                  Contact Us
+                </a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-
     <!-- Features -->
     <div id="features-wrapper">
       <div class="container">
@@ -302,7 +317,7 @@
 
   </div><!-- /#page-wrapper -->
 
-  <!-- 脚本 -->
+  <!-- Scripts -->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.dropotron.min.js"></script>
   <script src="assets/js/browser.min.js"></script>
