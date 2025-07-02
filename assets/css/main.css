@@ -2708,51 +2708,28 @@ nav a:hover {
 
 
 
-/* ====== 覆盖居中宽满 ====== */
-/* 1. 取消 logo 和 nav 各自 100% 宽度 */
+/* 覆盖以前的 centering 规则 */
 #header #logo,
 #header nav {
   width: auto !important;
   text-align: left !important;
 }
 
-/* 2. 把 header 变成 flex，从左向右排列 */
 #header {
   display: flex !important;
-  align-items: center !important;
   justify-content: flex-start !important;
-  padding: 0 30px !important;  /* 左右留白 */
-  height: 50px !important;      /* 视情况微调 */
-  box-sizing: border-box !important;
+  align-items: center !important;
 }
 
-/* 3. Logo 和 Home 之间留一点距离 */
 #logo {
   margin-right: 20px !important;
 }
-#logo img {
-  display: block !important;
-  margin: 0 !important;
-  height: 36px !important;
-}
 
-/* 4. 菜单项左对齐 */
 #nav ul {
   justify-content: flex-start !important;
-  gap: 30px !important;
-}
-#nav li {
-  margin: 0 15px !important;
 }
 
-/* 5. 右侧语言推到最右 */
-.right-section {
-  margin-left: auto !important;
-}
-
-/* ====== 修复遮挡 ====== */
-/* 6. 确保 body padding 足够，防止导航盖住内容 */
+/* 确保 body 有足够 padding，内容不被导航遮住 */
 body {
-  padding-top: 80px !important; /* 根据你的信息条 + 导航实际高度调整 */
+  padding-top: 80px !important;
 }
-
