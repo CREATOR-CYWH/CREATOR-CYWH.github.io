@@ -5,106 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <title>CREATOR TECHNOLOGY CO., LTD.</title>
 
-  <!-- 1. HTML5 UP 原始样式 -->
+  <!-- 原始样式 -->
   <link rel="stylesheet" href="assets/css/main.css" />
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <!-- 2. Font Awesome（图标库） -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-
-  <!-- 3. 覆盖 & 固定导航的自定义样式 -->
+  <!-- 自定义固定头部 & 导航样式 -->
   <style>
-    /*————— 页面顶部预留空间 —————*/
+    /* 整体预留 */
     body {
-      margin: 0 !important;
-      padding-top: 80px !important; /* 30px 信息条 + 50px 导航 */
+      margin: 0;
+      padding-top: 80px; /* 信息条30 + 导航50 */
       font-family: 'Open Sans', sans-serif;
-      background-color: #f7f7f7 !important;
+      background-color: #f7f7f7;
     }
-
-    /*————— 顶部信息条 —————*/
+    /* 顶部信息条 */
     #top-bar {
-      position: fixed !important;
+      position: fixed;
       top: 0; left: 0; right: 0;
-      height: 30px !important;
-      background: #001f5b !important;
-      color: #fff !important;
-      font-size: 14px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 40px !important;
-      z-index: 1000 !important;
+      height: 30px;
+      background: #001f5b;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      font-size: 14px;
+      z-index: 1000;
     }
-    #top-bar i {
-      margin-right: 6px !important;
-    }
+    #top-bar i { margin-right: 6px; }
 
-    /*————— 固定导航栏外层 —————*/
+    /* 导航容器 */
     #header-wrapper {
-      position: fixed !important;
-      top: 30px !important; /* 紧贴信息条下方 */
-      left: 0 !important;
-      right: 0 !important;
-      height: 50px !important;
-      background: #fff !important;
-      border-bottom: 1px solid #ddd !important;
-      z-index: 999 !important;
+      position: fixed;
+      top: 30px; left: 0; right: 0;
+      height: 50px;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      z-index: 999;
     }
-
-    /*————— 导航内部布局 —————*/
+    /* 导航内部布局 */
     #header-wrapper .container {
-      max-width: 1200px !important;
-      margin: 0 auto !important;
-      height: 100% !important;
-      display: flex !important;
-      align-items: center !important;
-      padding: 0 20px !important;
-      box-sizing: border-box !important;
+      max-width: 1200px;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 0 20px;
+      box-sizing: border-box;
     }
-
     /* Logo */
-    #logo {
-      margin-right: 20px !important;
-    }
-    #logo img {
-      height: 36px !important;
-      display: block !important;
-    }
-
+    #logo img { height: 36px; }
     /* 菜单 */
-    #nav {
-      /* 占据剩余空间 */
-      flex: 1 !important;
-    }
     #nav ul {
-      display: flex !important;
-      gap: 30px !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      list-style: none !important;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
     #nav a {
-      display: flex !important;
-      align-items: center !important;
-      height: 100% !important;
-      padding: 0 8px !important;
-      color: #001f5b !important;
-      font-weight: 600 !important;
-      font-size: 14px !important;
-      text-decoration: none !important;
+      display: block;
+      padding: 0 8px;
+      height: 50px;
+      line-height: 50px;
+      color: #001f5b;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
     }
     #nav .current > a,
     #nav a:hover {
-      color: #e63900 !important;
+      color: #e63900;
     }
-
-    /*————— 下移 Banner，避免遮挡 —————*/
-    #banner-wrapper {
-      margin-top: 20px !important;
-    }
+    /* 下移 Banner */
+    #banner-wrapper { margin-top: 20px; }
   </style>
 </head>
 <body class="is-preload homepage">
@@ -123,7 +99,7 @@
       <header class="container">
         <!-- Logo -->
         <div id="logo">
-          <a href="index.html"><img src="images/logo.png" alt="Creator Logo" /></a>
+          <a href="index.html"><img src="images/logo.png" alt="Logo" /></a>
         </div>
         <!-- 菜单 -->
         <nav id="nav">
